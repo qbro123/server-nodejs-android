@@ -1,0 +1,379 @@
+<div id="wrapper">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-landmark"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Admin Pages</div>
+        </a>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/account">
+                <i class="fas fa-fw fa-user-friends"></i>
+                <span>TÀI KHOẢN</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/danh-sach-thuoc">
+                <i class="fas fa-fw fa-pills"></i>
+                <span>DANH SÁCH THUỐC</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/co-so-san-xuat">
+                <i class="fas fa-fw fa-bezier-curve"></i>
+                <span>CƠ SỞ SẢN XUẤT</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/co-so-phan-phoi">
+                <i class="fas fa-fw fa-ambulance"></i>
+                <span>CƠ SỞ PHÂN PHỐI</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/co-so-kinh-doanh">
+                <i class="fas fa-fw fa-archway"></i>
+                <span>CƠ SỞ KINH DOANH</span></a>
+        </li>
+        <hr class="sidebar-divider d-none d-md-block">
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small"
+                            placeholder="Nhập nội dung tìm kiếm..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    <!-- Tìm kiếm -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <!-- Dropdown Tìm Kiếm -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                            aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                        placeholder="Nhập nội dung tìm kiếm..." aria-label="Search"
+                                        aria-describedby="basic-addon2">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <!-- USER -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Tài khoản</span>
+                        </a>
+                        <!-- ĐĂNG XUẤT -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="/notification">
+                                <i class="fas fa-bell fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Thông báo
+                            </a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Đăng xuất
+                            </a>
+                        </div>
+                        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">ĐĂNG XUẤT?</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">Bạn có muốn đăng xuất tài khoản không?</div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button"
+                                            data-dismiss="modal">Huỷ</button>
+                                        <a class="btn btn-primary" href="/signout">Đăng xuất</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title mb-4">
+                                    <div class="d-flex justify-content-start flex-lg-row flex-sm-column style-img">
+                                        <div class="image-container">
+                                            <img src="http://placehold.it/150x150" id="imgProfile"
+                                                style="width: 150px; height: 150px" class="img-thumbnail" />
+                                        </div>
+                                        <div class="userData ml-3">
+                                            <h2 class="d-block style-h2" style="font-size: 1.5rem; font-weight: bold"><a
+                                                    href="javascript:void(0);">{{info_user.email}}</a></h2>
+                                            <h6 class="d-block"><a href="javascript:void(0)">Admin Panel
+                                            </h6>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <a href="#" data-toggle="modal" data-target="#changepass"
+                                                        style="background-color:#007bff;padding:4px; margin-top: 4px; border-radius: 8px;text-decoration: none;color: #fff">Đổi
+                                                        mật
+                                                        khẩu</a>
+                                                </div>
+
+                                                <!-- Changle Pass -->
+                                                <div class="modal fade" id="changepass">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">Thay đổi mật khẩu</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form action="user/change-pass/{{_id}}">
+                                                                    <div class="form-group">
+                                                                        <label for="oldpass">Nhập mật khẩu cũ:</label>
+                                                                        <input type="password" class="form-control"
+                                                                            name="oldpass" placeholder="Enter email"
+                                                                            id="oldpass">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="pwd">Nhập mật khẩu mới:</label>
+                                                                        <input type="password" class="form-control"
+                                                                            placeholder="Enter password" name="pwd"
+                                                                            id="pwd">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="pwd">Nhập lại mật khẩu:</label>
+                                                                        <input type="password" class="form-control"
+                                                                            placeholder="Enter password" name="pwd"
+                                                                            id="pwd">
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-primary">Thay
+                                                                        đổi</button>
+                                                                </form>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger"
+                                                                    data-dismiss="modal">Đóng</button>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Changle Pass -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="basicInfo-tab" data-toggle="tab"
+                                                    href="#basicInfo" role="tab" aria-controls="basicInfo"
+                                                    aria-selected="true">Thông tin</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="connectedServices-tab" data-toggle="tab"
+                                                    href="#connectedServices" role="tab"
+                                                    aria-controls="connectedServices" aria-selected="false">Tài khoản
+                                                    khác</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content ml-1" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="basicInfo" role="tabpanel"
+                                                aria-labelledby="basicInfo-tab">
+                                                <div class="row">
+                                                    <div class="col-sm-3 col-md-2 col-5">
+                                                        <label style="font-weight:bold;">Họ và tên: </label>
+                                                    </div>
+                                                    <div class="col-md-8 col-6">
+                                                        {{info_user.fullname}}
+                                                    </div>
+                                                </div>
+                                                <hr />
+
+                                                <div class="row">
+                                                    <div class="col-sm-3 col-md-2 col-5">
+                                                        <label style="font-weight:bold;">Email</label>
+                                                    </div>
+                                                    <div class="col-md-8 col-6">
+                                                        {{info_user.email}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="connectedServices" role="tabpanel"
+                                                aria-labelledby="ConnectedServices-tab">
+                                                <div class="col-md-12 col-md-offset-1">
+                                                    <div class="panel panel-default panel-table">
+                                                        <div class="panel-heading">
+                                                            <div class="row">
+                                                                <div class="col col-xs-6">
+                                                                    <h3 class="panel-title">Danh sách quản trị web</h3>
+                                                                </div>
+                                                                <div class="col col-xs-6 text-right">
+                                                                    <button type="button"
+                                                                        class="btn btn-sm btn-primary btn-create"
+                                                                        data-toggle="modal" data-target="#myModal">Tạo
+                                                                        mới</button>
+                                                                </div>
+                                                                {{!-- model create --}}
+                                                                <div id="myModal" class="modal fade" role="dialog">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                                <h4 class="modal-title">Thêm quản lý
+                                                                                </h4>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <form action="/user/create-user"
+                                                                                    method="POST">
+                                                                                    <div class="form-group">
+                                                                                        <label for="fullname">Họ và tên:
+                                                                                        </label>
+                                                                                        <input type="text"
+                                                                                            name="fullname"
+                                                                                            class="form-control"
+                                                                                            placeholder="Nhập họ tên"
+                                                                                            id="fullname">
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="email">Email:
+                                                                                        </label>
+                                                                                        <input type="email"
+                                                                                            class="form-control"
+                                                                                            name="email"
+                                                                                            placeholder="Nhập email"
+                                                                                            id="email">
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="password">Mật
+                                                                                            khẩu:</label>
+                                                                                        <input type="password"
+                                                                                            name="password"
+                                                                                            class="form-control"
+                                                                                            placeholder="Nhập mật khẩu"
+                                                                                            id="password">
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        <label for="repassword">Nhập lại
+                                                                                            mật
+                                                                                            khẩu:</label>
+                                                                                        <input type="password"
+                                                                                            class="form-control"
+                                                                                            placeholder="Nhập lại mật khẩu"
+                                                                                            id="repassword">
+                                                                                    </div>
+                                                                                    <div class="form-group">
+                                                                                        {{message}}
+                                                                                    </div>
+                                                                                    <button type="submit"
+                                                                                        class="btn btn-primary">Thêm</button>
+                                                                                </form>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button"
+                                                                                    class="btn btn-default"
+                                                                                    data-dismiss="modal">Đóng</button>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                </div>
+                                                                {{!-- model create  --}}
+                                                            </div>
+                                                        </div>
+                                                        <div class="panel-body table-responsive">
+                                                            <table
+                                                                class="table table-striped table-bordered table-list">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="hidden-xs">ID</th>
+                                                                        <th>Fullname</th>
+                                                                        <th>Email</th>
+                                                                        <th>Change</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    {{#each userList}}
+                                                                    <tr>
+                                                                        <td class="hidden-xs">{{noNum}}</td>
+                                                                        <td>{{fullname}}</td>
+                                                                        <td>{{email}}</td>
+                                                                        <td>
+                                                                            <a href="/user/edituser/{{_id}}"
+                                                                                class="btn btn-primary mr-2">Sửa</a>
+                                                                            <a href="/user/delete/{{_id}}"
+                                                                                onclick="return confirm('Are you sure you want to delete')"
+                                                                                class="btn btn-warning mr-2">Xoá</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    {{/each}}
+                                                                </tbody>
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Trần Quốc Tuấn</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+<style>
+    @media only screen and (max-width: 500px) {
+        .style-img {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2.style-h2 a {
+            font-size: 14px;
+            margin-top: 2px;
+        }
+    }
+    }
+
+    }
+</style>

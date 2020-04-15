@@ -1,0 +1,426 @@
+<div id="wrapper">
+
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-landmark"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Admin Pages</div>
+        </a>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/account">
+                <i class="fas fa-fw fa-user-friends"></i>
+                <span>TÀI KHOẢN</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item">
+            <a class="nav-link" href="/danh-sach-thuoc">
+                <i class="fas fa-fw fa-pills"></i>
+                <span>DANH SÁCH THUỐC</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/co-so-san-xuat">
+                <i class="fas fa-fw fa-bezier-curve"></i>
+                <span>CƠ SỞ SẢN XUẤT</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/co-so-phan-phoi">
+                <i class="fas fa-fw fa-ambulance"></i>
+                <span>CƠ SỞ PHÂN PHỐI</span></a>
+        </li>
+        <hr class="sidebar-divider my-0">
+        <li class="nav-item ">
+            <a class="nav-link" href="/co-so-kinh-doanh">
+                <i class="fas fa-fw fa-archway"></i>
+                <span>CƠ SỞ KINH DOANH</span></a>
+        </li>
+
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+    </ul>
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0 small"
+                            placeholder="Nhập nội dung tìm kiếm..." aria-label="Search"
+                            aria-describedby="basic-addon2" />
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                    <!-- Tìm kiếm -->
+                    <li class="nav-item dropdown no-arrow d-sm-none">
+                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <!-- Dropdown Tìm Kiếm -->
+                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                            aria-labelledby="searchDropdown">
+                            <form class="form-inline mr-auto w-100 navbar-search">
+                                <div class="input-group">
+                                    <input type="text" class="form-control bg-light border-0 small"
+                                        placeholder="Nhập nội dung tìm kiếm..." aria-label="Search"
+                                        aria-describedby="basic-addon2" />
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="button">
+                                            <i class="fas fa-search fa-sm"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <!-- USER -->
+                    <li class="nav-item dropdown no-arrow">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">Tài khoản</span>
+                        </a>
+                        <!-- ĐĂNG XUẤT -->
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="userDropdown">
+                            <a class="dropdown-item" href="/notification">
+                                <i class="fas fa-bell fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Thông báo
+                            </a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Đăng xuất
+                            </a>
+                        </div>
+                        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">
+                                            ĐĂNG XUẤT?
+                                        </h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Bạn có muốn đăng xuất tài khoản không?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                                            Huỷ
+                                        </button>
+                                        <a class="btn btn-primary" href="/signout">Đăng xuất</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <table id="notification" class="table table-hover table-striped">
+                            <a href="/notification/tao-tin-moi" data-toggle="modal" data-target="#exampleModalCenter"
+                                class="btn btn-success my-2">Tạo tin
+                                mới</a>
+                            {{!-- Model Add Notification --}}
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Tạo thông báo mới</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/notification/tao-tin-moi" method="POST"
+                                                enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label for="tentin" class="col-form-label">Tiêu đề: </label>
+                                                    <input type="text" class="form-control" id="tieude" name="tentin">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="noidung" class="col-form-label">Nội dung:</label>
+                                                    <textarea class="form-control" id="noidung"
+                                                        name="noidung"></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col">
+                                                            <label for="datetime" class="col-form-label">Ngày
+                                                                đăng: </label>
+                                                            <input type="text" class="form-control" editable="false"
+                                                                id="ngaydang" name="ngaydang">
+                                                            <script>
+                                                                let d = new Date();
+                                                                document.getElementById("ngaydang").value = d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear();
+                                                            </script>
+                                                        </div>
+                                                        <div class="col"><label for="nguoidang" class="nguoidang">Người
+                                                                gửi: </label>
+                                                            <select class="form-control" name="nguoidang">
+                                                                {{#each List1}}
+                                                                <option>{{fullname}}</option>
+                                                                {{/each}}
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="image" class="col-form-label">Hình ảnh:</label>
+                                                    <input type="file" name="image" class="form-control-file">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Huỷ</button>
+                                                    <button type="submit" class="btn btn-success">Tạo mới</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            {{!-- Model Add Notification --}}
+                            <thead>
+                                <tr class="thead-dark">
+                                    <th width="150">Người đăng</th>
+                                    <th>Thông báo</th>
+                                    <th>Ngày đăng</th>
+                                    <th>Xoá tin</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each List}}
+                                <tr>
+                                    <td>{{nguoidang}}</td>
+                                    <td>
+                                        <details>
+                                            <summary>{{tentin}}</summary>
+                                            <img src="http://localhost:3000/uploads/{{hinhanh}}"
+                                                style="float: left; padding: 10px" alt="" width="100px"
+                                                height="100px" />
+                                            <em class="text-muted">{{noidung}}
+                                            </em>
+                                        </details>
+                                    </td>
+                                    <td>
+                                        {{ngaydang}}
+                                    </td>
+                                    <td>
+                                        <a href="/notification/delete/{{_id}}"><i class="fas fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Trần Quốc Tuấn</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <style>
+        .table-title {
+            padding-bottom: 15px;
+            background: #299be4;
+            color: #fff;
+            padding: 16px 30px;
+            margin: -20px -25px 10px;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .table-title h2 {
+            margin: 5px 0 0;
+            font-size: 20px;
+        }
+
+        .table-title .btn {
+            color: #566787;
+            float: right;
+            font-size: 13px;
+            background: #fff;
+            border: none;
+            min-width: 50px;
+            border-radius: 2px;
+            border: none;
+            outline: none !important;
+            margin-left: 10px;
+        }
+
+        .table-title .btn:hover,
+        .table-title .btn:focus {
+            color: #566787;
+            background: #f2f2f2;
+        }
+
+        .table-title .btn i {
+            float: left;
+            font-size: 18px;
+            margin-right: 5px;
+        }
+
+        .table-title .btn span {
+            float: left;
+            margin-top: 2px;
+        }
+
+        table.table tr th,
+        table.table tr td {
+            border-color: #e9e9e9;
+            padding: 12px 15px;
+            vertical-align: middle;
+        }
+
+        table.table tr th:first-child {
+            width: 60px;
+        }
+
+        table.table tr th:last-child {
+            width: 100px;
+        }
+
+        table.table-striped tbody tr:nth-of-type(odd) {
+            background-color: #fcfcfc;
+        }
+
+        table.table-striped.table-hover tbody tr:hover {
+            background: #f5f5f5;
+        }
+
+        table.table th i {
+            font-size: 13px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        table.table td:last-child i {
+            opacity: 0.9;
+            font-size: 17px;
+            margin: 0 5px;
+        }
+
+        table.table td a {
+            font-weight: bold;
+            color: #566787;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        table.table td a:hover {
+            color: #2196F3;
+        }
+
+        table.table td a.settings {
+            color: #2196F3;
+        }
+
+        table.table td a.delete {
+            color: #F44336;
+        }
+
+        table.table td i {
+            font-size: 19px;
+        }
+
+        table.table .avatar {
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .status {
+            font-size: 30px;
+            margin: 2px 2px 0 0;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 10px;
+        }
+
+        .text-success {
+            color: #10c469;
+        }
+
+        .text-info {
+            color: #62c9e8;
+        }
+
+        .text-warning {
+            color: #FFC107;
+        }
+
+        .text-danger {
+            color: #ff5b5b;
+        }
+
+        .pagination {
+            float: right;
+            margin: 0 0 5px;
+        }
+
+        .pagination li a {
+            border: none;
+            font-size: 13px;
+            min-width: 30px;
+            min-height: 30px;
+            color: #999;
+            margin: 0 2px;
+            line-height: 30px;
+            border-radius: 2px !important;
+            text-align: center;
+            padding: 0 6px;
+        }
+
+        .pagination li a:hover {
+            color: #666;
+        }
+
+        .pagination li.active a,
+        .pagination li.active a.page-link {
+            background: #03A9F4;
+        }
+
+        .pagination li.active a:hover {
+            background: #0397d6;
+        }
+
+        .pagination li.disabled i {
+            color: #ccc;
+        }
+
+        .pagination li i {
+            font-size: 16px;
+            padding-top: 6px
+        }
+
+        .hint-text {
+            float: left;
+            margin-top: 10px;
+            font-size: 13px;
+        }
+    </style>

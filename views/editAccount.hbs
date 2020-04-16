@@ -13,12 +13,11 @@
                 <div class="from-group">
                     <div class="row">
                         <div style="padding: 15px 0px 0px 15px" class="col-3 flex-row">
-                            <img src="http://localhost:3000/uploads/{{Model.image}}" id="imageURL" width="100"
-                                height="100" class="img-thumbnail img-preview">
+                            <img src="/uploads/{{Model.image}}" id="imageURL" width="100" height="100"
+                                class="img-thumbnail img-preview">
                             <br>
                             <input type="hidden" name="imagehide" value="{{Model.image}}">
-                            <input type="file" name="image" id="image"
-                                value="http://localhost:3000/uploads/{{Model.image}}" hidden>
+                            <input type="file" name="image" id="image" value="/uploads/{{Model.image}}" hidden>
                             <label for="image" class="d-flex justify-content-center label-style">Thay đổi</label>
                         </div>
                         <script>
